@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dakutenize</title>
+</head>
+<body>
+<h1>Dakutenize</h1>
+<p>
+文字列に濁点を付けます。
+</p>
+<p>
+濁点の代わりに &quot; を用いる人が度々いますが &quot; は濁点ではないです。
+これを濁点に見立てて使わないでください。
+</p>
+<hr>
+<textarea id="s">あいうえお</textarea>
+<button id="b">濁点を付ける</button>
+<script>
+	const s = document.getElementById('s');
+	const b = document.getElementById('b');
+
+	b.addEventListener('click', () => {
+		const org = s.value;
+		const arr = [];
+		for (const c of org.split(''))
+			arr.push(c, '\u3099');
+		s.value = arr.join('');
+	});
+</script>
