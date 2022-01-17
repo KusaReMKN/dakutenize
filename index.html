@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dakutenize</title>
+<script src="js/dakutenize.js" defer></script>
 </head>
 <body>
 <h1>Dakutenize</h1>
@@ -18,17 +19,5 @@
 <hr>
 <textarea id="s">あいうえお</textarea>
 <button id="b">濁点を付ける</button>
-<script>
-	const s = document.getElementById('s');
-	const b = document.getElementById('b');
-
-	b.addEventListener('click', () => {
-		const org = s.value;
-		const arr = [];
-		for (const c of org.split(''))
-			arr.push(c, '\u3099');
-		s.value = arr.join('');
-	});
-</script>
 </body>
 </html>
