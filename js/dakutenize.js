@@ -5,6 +5,7 @@ const topping = document.forms.topping.topping;
 const dakutenize = document.getElementById('dakutenize');
 const output = document.getElementById('output');
 const copy = document.getElementById('copy');
+const twitter = document.getElementById('twitter');
 
 function dakutenizer()
 {
@@ -25,5 +26,16 @@ function copier()
 	document.execCommand('copy');
 }
 
+function twitterer()
+{
+	const dakutenizeURI = 'https://kusaremkn.github.io/dakutenize/';
+	if (output.value.length === 0)
+		window.alert('濁゙点゙を゙付゙げ忘゙れ゙でい゙ま゙ぜん゙が？゙');
+	window.open('https://twitter.com/intent/tweet/?text='
+			+ encodeURIComponent(output.value)
+			+ '&url=' + encodeURIComponent(dakutenizeURI));
+}
+
 dakutenize.addEventListener('click', dakutenizer);
 copy.addEventListener('click', copier);
+twitter.addEventListener('click', twitterer);
