@@ -5,6 +5,7 @@ body {
 	width: 95%;
 	max-width: 800px;
 	margin: 1rem auto;
+	font-family: 'Noto sans', 'Noto Sans JP', sans-serif;
 }
 textarea {
 	display: block;
