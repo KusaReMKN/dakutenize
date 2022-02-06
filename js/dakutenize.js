@@ -1,11 +1,17 @@
 'use strict';
 
 const input = document.getElementById('input');
+const reset = document.getElementById('reset');
 const topping = document.forms.topping.topping;
 const dakutenize = document.getElementById('dakutenize');
 const output = document.getElementById('output');
 const copy = document.getElementById('copy');
 const twitter = document.getElementById('twitter');
+
+function resetter()
+{
+	input.value = '';
+}
 
 function dakutenizer()
 {
@@ -36,6 +42,7 @@ function twitterer()
 			+ '&url=' + encodeURIComponent(dakutenizeURI));
 }
 
+reset.addEventListener('click', resetter);
 dakutenize.addEventListener('click', dakutenizer);
 copy.addEventListener('click', copier);
 twitter.addEventListener('click', twitterer);
