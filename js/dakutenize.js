@@ -23,7 +23,10 @@ function dakutenizer()
 	};
 	let dakutenchar = dakutenchars[topping.value] || '\u3099';
 
-	output.value = input.value.replace(/\S/g, '$&' + dakutenchar);
+	if (topping.value === 'dequote')
+		output.value = input.value.replace(/\"/g, '\u3099');
+	else
+		output.value = input.value.replace(/\S/g, '$&' + dakutenchar);
 }
 
 function copier()
